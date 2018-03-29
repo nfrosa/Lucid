@@ -18,10 +18,11 @@ public class WitchController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.name == "lucid_dreamSprites_0") {
-			other.gameObject.SetActive(false);
-			reloading = true;
-			thePlayer = other.gameObject;
-		}
+//		if (other.gameObject.name == "lucid_dreamSprites_0") {
+//			// set player's active to false
+//			other.gameObject.SetActive(false);
+//			reloading = true;
+//			thePlayer = other.gameObject;
+//		}
 	}
 }
