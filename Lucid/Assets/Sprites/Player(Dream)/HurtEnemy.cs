@@ -16,7 +16,7 @@ public class HurtEnemy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-        animator.SetBool("Attacking", true);
+//        animator.SetBool("Attacking", true);
 		if(other.gameObject.tag == "Enemy")
 		{
 			Destroy(other.gameObject);
