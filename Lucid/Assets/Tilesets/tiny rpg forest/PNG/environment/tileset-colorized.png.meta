@@ -2678,10 +2678,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 8}
+      - - {x: -8, y: 1.0792847}
         - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+        - {x: 4.0453033, y: -8}
+        - {x: 2.7599258, y: -0.8604126}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset-colorized_119
@@ -2714,10 +2714,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
+      - - {x: -2.464447, y: 1.1619568}
+        - {x: -3.1156769, y: -8}
         - {x: 8, y: -8}
-        - {x: 8, y: 8}
+        - {x: 8, y: 1.4875793}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset-colorized_121
@@ -2968,8 +2968,8 @@ TextureImporter:
       physicsShape:
       - - {x: -8, y: 8}
         - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+        - {x: 3.766922, y: -8}
+        - {x: 2.790062, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset-colorized_135
@@ -3002,8 +3002,8 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
+      - - {x: -1.8131866, y: 8}
+        - {x: -1.8131866, y: -8}
         - {x: 8, y: -8}
         - {x: 8, y: 8}
       tessellationDetail: 0
@@ -3301,8 +3301,8 @@ TextureImporter:
       physicsShape:
       - - {x: -8, y: 8}
         - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+        - {x: 3.766922, y: -8}
+        - {x: 4.0925446, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
       name: tileset-colorized_153
@@ -3335,8 +3335,8 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
+      - - {x: -3.4412994, y: 8}
+        - {x: -2.1388092, y: -8}
         - {x: 8, y: -8}
         - {x: 8, y: 8}
       tessellationDetail: 0
