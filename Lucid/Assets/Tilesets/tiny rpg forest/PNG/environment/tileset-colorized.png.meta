@@ -3300,8 +3300,8 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -8, y: 8}
-        - {x: -8, y: -8}
-        - {x: 3.766922, y: -8}
+        - {x: -8, y: -3.627533}
+        - {x: 3.2810898, y: -3.1417236}
         - {x: 4.0925446, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
@@ -3336,8 +3336,8 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -3.4412994, y: 8}
-        - {x: -2.1388092, y: -8}
-        - {x: 8, y: -8}
+        - {x: -1.4100647, y: -3.627533}
+        - {x: 8, y: -2.8988037}
         - {x: 8, y: 8}
       tessellationDetail: 0
     - serializedVersion: 2
