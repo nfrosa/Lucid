@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HurtEnemy : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    private Animator animator;
+    // Use this for initialization
+    void Start () {
 
 	}
 
@@ -16,6 +16,7 @@ public class HurtEnemy : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+        animator.SetBool("Attacking", true);
 		if(other.gameObject.tag == "Enemy")
 		{
 			Destroy(other.gameObject);
