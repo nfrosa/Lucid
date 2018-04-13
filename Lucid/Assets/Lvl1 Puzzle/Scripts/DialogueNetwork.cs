@@ -6,9 +6,11 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class DialogueNetwork : MonoBehaviour {
 	private Text textComponent;
+	[TextArea(3, 10)]
 	public string[] dialogueStrings;
+	public string[] therapistNegativeStrings;
 
-	public float secondsBetweenCharacters = 0.13f;
+	public float secondsBetweenCharacters = 0.7f;
 
 	public KeyCode DialogueInput = KeyCode.Return;
 
@@ -43,6 +45,7 @@ public class DialogueNetwork : MonoBehaviour {
 		{
 			if (!isStringBeingRevealed) {
 				isStringBeingRevealed = true;
+				// put if statement here to trigger Therapist Negative Strings
 				StartCoroutine(DisplayString(dialogueStrings[currentDialogueIndex++]));
 
 				if (currentDialogueIndex >= dialogueLength) {
