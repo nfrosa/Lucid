@@ -8,7 +8,8 @@ public class DialogueNetwork : MonoBehaviour {
 	private Text textComponent;
 	[TextArea(3, 10)]
 	public string[] dialogueStrings;
-	public string[] therapistNegativeStrings;
+	public string[] therapistNegative;
+	public string[] therapistPositive;
 
 	public float secondsBetweenCharacters = 0.7f;
 
