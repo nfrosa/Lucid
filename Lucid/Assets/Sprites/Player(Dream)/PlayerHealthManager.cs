@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour {
 	public int playerMaxHealth;
@@ -21,7 +22,8 @@ public class PlayerHealthManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (playerCurrentHealth <= 0) {
-			gameObject.SetActive(false);
+			// gameObject.SetActive(false);
+			SceneManager.LoadScene("Menu");
 		}
 
 		if (flashActive) {
