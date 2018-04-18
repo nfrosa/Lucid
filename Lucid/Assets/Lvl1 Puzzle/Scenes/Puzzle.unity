@@ -186,80 +186,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &53120348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 53120349}
-  - component: {fileID: 53120351}
-  - component: {fileID: 53120350}
-  m_Layer: 5
-  m_Name: NameTextBox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &53120349
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 53120348}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 2}
-  m_Children: []
-  m_Father: {fileID: 691489407}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -550.7, y: 70.629}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &53120350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 53120348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.48235297, g: 0.09411766, b: 0.5176471, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 50
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Flu:'
---- !u!222 &53120351
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 53120348}
 --- !u!1 &59541765
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +734,7 @@ GameObject:
   - component: {fileID: 459241012}
   - component: {fileID: 459241014}
   - component: {fileID: 459241013}
+  - component: {fileID: 459241015}
   m_Layer: 5
   m_Name: DialogueTextBox
   m_TagString: Untagged
@@ -826,12 +753,12 @@ RectTransform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 691489407}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97, y: -70}
-  m_SizeDelta: {x: 597.4, y: 78.8}
+  m_AnchoredPosition: {x: -1.3, y: -8.3607}
+  m_SizeDelta: {x: 492.4, y: 75.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &459241013
 MonoBehaviour:
@@ -872,6 +799,72 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 459241011}
+--- !u!114 &459241015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 459241011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f0278f7e37145bfa4eaf4f9e9f10fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueStrings:
+  - '--- After the events of the night before, Fu decides to see her therapist ---'
+  - "Therapist: Fu, I want you to feel better and do better\u2026 Now, tell me...
+    what's wrong?"
+  - I don't know, I began experiencing these weird dreams...
+  - "It was very vivid\u2026 almost as if it was real life. Everything felt so\u2026
+    real."
+  - 'Therapist: I see... I need more information to detect what the issue is! I have
+    an idea.'
+  - "Therapist: Let's see you play this game\u2026 I want you to talk about your dream
+    as you play this game. How did you feel? Did it trigger anything from your past?
+    Tell me everything."
+  - "Fu: Okay\u2026 uhm\u2026 I guess I'll give it a try."
+  - '--- Fu begins playing the game ---'
+  - 'Fu: It was weird. It almost felt like I was in the real world... It made me recall
+    the time 10 years ago, It was the worst day of my life...'
+  - 'Fu: Rageva, my best friend, she betrayed me...'
+  - "Fu: Rageva\u2026 we grew up together and have been neighbors since who knows
+    when. We did everything together, the best of friends..."
+  - "Fu: She was always good at making friends and just being popular in general.
+    She was always loved by friends, family, whoever! I\u2019ve always been beneath
+    her\u2026 even\u2026 even my parents\u2026 "
+  - 'Fu: Even my parents wished that they had a daughter like Rageva and not me!!!'
+  - "Fu: But that was my motivation. I wanted to be just like Rageva. I wanted to
+    better myself as an individual. But Rageva\u2026 "
+  - "Fu: Rageva, who I thought was my best friend, sacrificed our friendship for even
+    more popularity. She leaked a video of me when I was at my most vulnerable state.
+    The video went viral\u2026"
+  - "Fu: Ever since that day, while her popularity rose, people kept making fun of
+    me. It\u2019s the reason why I\u2019m so broken now! I want to hate Rageva\u2026
+    but I can\u2019t. I still consider my best friend\u2026 "
+  - "Therapist: Is there something more to this? Are you hiding anything Fu? I can
+    tell by viewing how you\u2019ve played this game."
+  - "Fu: I\u2019m not hiding anything. I\u2019ve been as transparent as I can be\u2026 "
+  - "Fu: I guess\u2026 well it\u2019s not that important\u2026 but Rageva does try
+    to reach out to me to attempt to befriend me again..."
+  - "Fu: But I just don\u2019t know if I can trust her ever again\u2026 "
+  - "Therapist: Why do you think so? You said all this happened 10 years ago. Maybe
+    it\u2019s time to forgive and forget? Is that what you want? "
+  - 'Fu: Well I want to be her friend again, but I feel like my emotions are just
+    too strong; what if I lash out?'
+  - "Therapist: The first step in improving is to accept your emotions and talk it
+    out with Rageva. You\u2019re a smart girl Fu. I don\u2019t want you to be hesitant
+    when going about solving your problems."
+  - "Fu: I guess\u2026 I guess you\u2019re right..."
+  - "Fu: I\u2019ll reply to her\u2026 but most importantly\u2026 I think I must accept
+    my rage and jealousy towards certain things... Accepting them and realizing I
+    have these attributes will allow me to overcome my rage and jealousy... It is
+    the only path to improvement.\""
+  - 
+  - 
+  - 
+  therapistNegativeStrings: []
+  secondsBetweenCharacters: 0.12
+  DialogueInput: 13
 --- !u!1 &487399452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,15 +1078,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
-  - {fileID: 53120349}
   - {fileID: 459241012}
   m_Father: {fileID: 487399456}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -215, y: -169}
-  m_SizeDelta: {x: 430, y: -189.95}
+  m_AnchoredPosition: {x: -110.06604, y: -105.06652}
+  m_SizeDelta: {x: 659.5, y: -124.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691489408
 MonoBehaviour:
@@ -2976,13 +2968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cf3406912698e48bb8da248cd25f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile:
-  - {fileID: 1509840869636106, guid: 38f1f216f8ecabe4e9ade7200409ef48, type: 2}
-  - {fileID: 1799080746709962, guid: cecadeb541ecc5042a3cf3b81e778136, type: 2}
-  - {fileID: 1874517421789068, guid: 8bcfca28ec7f7754ab8973b3c654b679, type: 2}
-  - {fileID: 1293498425057278, guid: 02fb3b3add4ba514d93a20d69b09e819, type: 2}
-  - {fileID: 1102146131732750, guid: 2dc9b28c1f87cc74dba5b63635fe1f98, type: 2}
-  ScoreText: {fileID: 59541767}
+  tile: []
+  ScoreText: {fileID: 0}
 --- !u!81 &1747478643
 AudioListener:
   m_ObjectHideFlags: 0

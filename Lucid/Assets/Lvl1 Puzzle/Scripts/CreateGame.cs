@@ -303,7 +303,7 @@ public class CreateGame : MonoBehaviour
 	// Function for setting the score text UI
 	void SetScoreText()
 	{
-		ScoreText.text = "Score: " + Score.ToString();
+		//ScoreText.text = "Score: " + Score.ToString();
 	}
 
 }
