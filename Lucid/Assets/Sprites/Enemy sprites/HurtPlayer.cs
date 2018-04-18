@@ -12,18 +12,26 @@ public class HurtPlayer : MonoBehaviour {
 	public float flashLength;
 	private float flashCounter;
 
+	private Animator animator;
+
 	private SpriteRenderer enemySprite;
+
+	public AudioSource death;
+	public AudioClip death1;
 
 	void Start()
 	{
 		curHealth = maxHealth;
 		enemySprite = GetComponent<SpriteRenderer> ();
+		animator = this.GetComponent<Animator>();
 	}
 
 	void Update()
 	{
 		if (curHealth <= 0) {
-			Destroy (gameObject);
+			animator.SetBool ("isDying", true);
+			death.PlayOneShot (death1);
+			StartCoroutine (Coroutine ());
 		}
 		if (flashActive) {
 
@@ -40,6 +48,11 @@ public class HurtPlayer : MonoBehaviour {
 
 			flashCounter -= Time.deltaTime;
 		}
+	}
+
+	IEnumerator Coroutine() {
+		yield return new WaitForSeconds(0.4f); //this will wait 5 seconds
+		Destroy (gameObject);
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
