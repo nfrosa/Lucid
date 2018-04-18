@@ -810,59 +810,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f0278f7e37145bfa4eaf4f9e9f10fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
   dialogueStrings:
   - '--- After the events of the night before, Fu decides to see her therapist ---'
   - "Therapist: Fu, I want you to feel better and do better\u2026 Now, tell me...
     what's wrong?"
-  - I don't know, I began experiencing these weird dreams...
-  - "It was very vivid\u2026 almost as if it was real life. Everything felt so\u2026
+  - 'Fu: I don''t know, I began experiencing these weird dreams...'
+  - "Fu: It was very vivid\u2026 almost as if it was real life. Everything felt so\u2026
     real."
   - 'Therapist: I see... I need more information to detect what the issue is! I have
     an idea.'
   - "Therapist: Let's see you play this game\u2026 I want you to talk about your dream
     as you play this game. How did you feel? Did it trigger anything from your past?
     Tell me everything."
-  - "Fu: Okay\u2026 uhm\u2026 I guess I'll give it a try."
-  - '--- Fu begins playing the game ---'
-  - 'Fu: It was weird. It almost felt like I was in the real world... It made me recall
-    the time 10 years ago, It was the worst day of my life...'
-  - 'Fu: Rageva, my best friend, she betrayed me...'
-  - "Fu: Rageva\u2026 we grew up together and have been neighbors since who knows
-    when. We did everything together, the best of friends..."
-  - "Fu: She was always good at making friends and just being popular in general.
-    She was always loved by friends, family, whoever! I\u2019ve always been beneath
-    her\u2026 even\u2026 even my parents\u2026 "
-  - 'Fu: Even my parents wished that they had a daughter like Rageva and not me!!!'
-  - "Fu: But that was my motivation. I wanted to be just like Rageva. I wanted to
-    better myself as an individual. But Rageva\u2026 "
-  - "Fu: Rageva, who I thought was my best friend, sacrificed our friendship for even
-    more popularity. She leaked a video of me when I was at my most vulnerable state.
-    The video went viral\u2026"
-  - "Fu: Ever since that day, while her popularity rose, people kept making fun of
-    me. It\u2019s the reason why I\u2019m so broken now! I want to hate Rageva\u2026
-    but I can\u2019t. I still consider my best friend\u2026 "
-  - "Therapist: Is there something more to this? Are you hiding anything Fu? I can
-    tell by viewing how you\u2019ve played this game."
-  - "Fu: I\u2019m not hiding anything. I\u2019ve been as transparent as I can be\u2026 "
-  - "Fu: I guess\u2026 well it\u2019s not that important\u2026 but Rageva does try
-    to reach out to me to attempt to befriend me again..."
-  - "Fu: But I just don\u2019t know if I can trust her ever again\u2026 "
-  - "Therapist: Why do you think so? You said all this happened 10 years ago. Maybe
-    it\u2019s time to forgive and forget? Is that what you want? "
-  - 'Fu: Well I want to be her friend again, but I feel like my emotions are just
-    too strong; what if I lash out?'
-  - "Therapist: The first step in improving is to accept your emotions and talk it
-    out with Rageva. You\u2019re a smart girl Fu. I don\u2019t want you to be hesitant
-    when going about solving your problems."
-  - "Fu: I guess\u2026 I guess you\u2019re right..."
-  - "Fu: I\u2019ll reply to her\u2026 but most importantly\u2026 I think I must accept
-    my rage and jealousy towards certain things... Accepting them and realizing I
-    have these attributes will allow me to overcome my rage and jealousy... It is
-    the only path to improvement.\""
-  - 
-  - 
-  - 
+  introDialogue: []
+  outroDialogue: []
   therapistNegative:
   - 'Therapist: This is awful! Are you going to even make a move?'
   - "Therapist: We\u2019re not going to get anywhere in this session if you don\u2019t
@@ -880,6 +841,8 @@ MonoBehaviour:
     everything.'
   - 'Therapist: Interesting move! This is revealing a lot.'
   - 'Therapist: Yes! Continue on!'
+  Fu: {fileID: 1904450880}
+  Therapist: {fileID: 0}
   secondsBetweenCharacters: 0.12
   DialogueInput: 13
 --- !u!1 &487399452

@@ -8,13 +8,20 @@ public class DialogueNetwork : MonoBehaviour {
 	private Text textComponent;
 	[TextArea(3, 10)]
 	public string[] dialogueStrings;
+
+	// therapist neg/pos dialogues
 	public string[] therapistNegative;
 	public string[] therapistPositive;
 
-	public float secondsBetweenCharacters = 0.7f;
+	// game objects
+	public GameObject Fu;
+	public GameObject Therapist;
+
+	public float secondsBetweenCharacters = 1.2f;
 
 	public KeyCode DialogueInput = KeyCode.Return;
 
+	// boolean variables to handle dialogue flow
 	private bool isStringBeingRevealed = false; 
 	private bool isDialoguePlaying = false; 
 	private bool isEndOfDialogue = false; 
@@ -45,8 +52,11 @@ public class DialogueNetwork : MonoBehaviour {
 		while (currentDialogueIndex < dialogueLength || !isStringBeingRevealed) 
 		{
 			if (!isStringBeingRevealed) {
+				// Fu speaking
+
+				// Therapist talking
+
 				isStringBeingRevealed = true;
-				// put if statement here to trigger Therapist Negative Strings
 				StartCoroutine(DisplayString(dialogueStrings[currentDialogueIndex++]));
 
 				if (currentDialogueIndex >= dialogueLength) {
@@ -71,6 +81,7 @@ public class DialogueNetwork : MonoBehaviour {
 	}
 
 	// Co-Routines
+
 	private IEnumerator DisplayString(string stringToDisplay) 
 	{
 		int stringLength = stringToDisplay.Length;
@@ -105,5 +116,27 @@ public class DialogueNetwork : MonoBehaviour {
 
 		isStringBeingRevealed = false;
 		textComponent.text = ""; 
+	}
+
+	// Show/Hide Character Fu
+	private void HideFu()
+	{
+		Fu.SetActive(false);
+	}
+
+	private void ShowFu()
+	{
+		Fu.SetActive(true);
+	}
+
+	// Show/Hide Character Therapist
+	private void HideTherapist()
+	{
+		Therapist.SetActive(false);
+	}
+
+	private void ShowTherapist()
+	{
+		Therapist.SetActive(true);
 	}
 }
