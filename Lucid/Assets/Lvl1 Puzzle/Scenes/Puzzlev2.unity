@@ -140,15 +140,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1adc21b107f64584aae0f74f9b570779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 5
-  height: 7
+  width: 6
+  height: 10
   tilePrefab: {fileID: 1085665381357628, guid: 251b5139277afaf4db31dc9050aa7fc1, type: 2}
   dots:
-  - {fileID: 1444739870379132, guid: 7745f51f6e186fc4782f406a7c277d6b, type: 2}
-  - {fileID: 1626757648518080, guid: 99bd02ea8f39a4d449f70f82a9a01d55, type: 2}
-  - {fileID: 1070102575446532, guid: b3b93816549c11a4999850da56be6724, type: 2}
-  - {fileID: 1032160708396208, guid: 865cf542fc6e06e43a2ba0a095c8a079, type: 2}
-  - {fileID: 1847940348043124, guid: 524142d19ba696444aeb871141e4ad90, type: 2}
+  - {fileID: 1004714573065608, guid: a011458222129784e8ade7d7354aa8d4, type: 2}
+  - {fileID: 1999634039261536, guid: ec95be53112166846bc520dcaf88db86, type: 2}
+  - {fileID: 1775653712185462, guid: 305aa1d776bba304c9447b57ae4df0c9, type: 2}
+  - {fileID: 1471978384206076, guid: ba393cfe687c59a43b43fc5938d537a4, type: 2}
+  - {fileID: 1765788313440342, guid: 6ce1114b1f30fdd4590637a48de0b351, type: 2}
+  - {fileID: 1535796949547620, guid: 3de74931fedc0d844beebb4c577a19ac, type: 2}
+  - {fileID: 1501451681336112, guid: 1a0f0f089b22255448cbdf5e518b38a6, type: 2}
+  - {fileID: 1557711457412898, guid: c05c27fd8910ea54da764d43ef6b181f, type: 2}
+  - {fileID: 1019055874440926, guid: 52bcc5039a9190b48a15e437294c6478, type: 2}
 --- !u!4 &299496771
 Transform:
   m_ObjectHideFlags: 0

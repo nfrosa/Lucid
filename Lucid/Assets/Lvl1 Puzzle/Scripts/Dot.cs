@@ -18,7 +18,10 @@ public class Dot : MonoBehaviour {
 	private Vector2 firstTouchPosition;
 	private Vector2 finalTouchPosition;
 	private Vector2 tempPosition;
+
+	[Header("Swipe Stuff")]
 	public float swipeAngle = 0;
+	public float swipeResist = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +40,8 @@ public class Dot : MonoBehaviour {
 		FindMatches ();
 		if (isMatched) {
 			SpriteRenderer mySprite = GetComponent<SpriteRenderer> ();
-			mySprite.color = new Color (0f, 0f, 0f, .2f);
+			Color currentColor = mySprite.color;
+			mySprite.color = new Color (currentColor.r, currentColor.g, currentColor.b, .2f);
 		}
 
 		targetX = column;
@@ -45,23 +49,27 @@ public class Dot : MonoBehaviour {
 		if (Mathf.Abs (targetX - transform.position.x) > .1) {
 			// Move towards the target
 			tempPosition = new Vector2(targetX, transform.position.y);
-			transform.position = Vector2.Lerp (transform.position, tempPosition, .4f);
+			transform.position = Vector2.Lerp (transform.position, tempPosition, .6f);
+			if (board.allDots [column, row] != this.gameObject) {
+				board.allDots [column, row] = this.gameObject;
+			}
 		} else {
 			// Directly set the position
 			tempPosition = new Vector2(targetX, transform.position.y);
 			transform.position = tempPosition;
-			board.allDots [column, row] = this.gameObject;
 		}
 
 		if (Mathf.Abs (targetY - transform.position.y) > .1) {
 			// Move towards the target
 			tempPosition = new Vector2(transform.position.x, targetY);
-			transform.position = Vector2.Lerp (transform.position, tempPosition, .4f);
+			transform.position = Vector2.Lerp (transform.position, tempPosition, .6f);
+			if (board.allDots [column, row] != this.gameObject) {
+				board.allDots [column, row] = this.gameObject;
+			}
 		} else {
 			// Directly set the position
 			tempPosition = new Vector2(transform.position.x, targetY);
 			transform.position = tempPosition;
-			board.allDots [column, row] = this.gameObject;
 		}
 	}
 
@@ -74,8 +82,9 @@ public class Dot : MonoBehaviour {
 				otherDot.GetComponent<Dot> ().column = column;
 				row = previousRow;
 				column = previousColumn;
+			} else {
+				board.DestroyMatches ();
 			}
-
 			otherDot = null;
 		}
 	}
@@ -94,9 +103,10 @@ public class Dot : MonoBehaviour {
 	// Calcuate between first touch to final touch
 	void CalculateAngle()
 	{
-		swipeAngle = Mathf.Atan2 (finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * 100 / Mathf.PI;
-		Debug.Log (swipeAngle);
-		MovePieces ();
+		//if (Mathf.Abs (finalTouchPosition.y - finalTouchPosition.y) > swipeResist || Mathf.Abs (finalTouchPosition.x - finalTouchPosition.x) > swipeResist) {
+			swipeAngle = Mathf.Atan2 (finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * 100 / Mathf.PI;
+			MovePieces ();
+		//}
 	}
 
 	void MovePieces()
@@ -130,20 +140,24 @@ public class Dot : MonoBehaviour {
 		if (column > 0 && column < board.width - 1) {
 			GameObject leftDot1 = board.allDots[column - 1, row];
 			GameObject rightDot1 = board.allDots[column + 1, row];
-			if (leftDot1.tag == this.gameObject.tag && rightDot1.tag == this.gameObject.tag){
-				leftDot1.GetComponent<Dot>().isMatched = true;
-				rightDot1.GetComponent<Dot>().isMatched = true;
-				isMatched = true;
+			if (leftDot1 != null && rightDot1 != null) {
+				if (leftDot1.tag == this.gameObject.tag && rightDot1.tag == this.gameObject.tag){
+					leftDot1.GetComponent<Dot>().isMatched = true;
+					rightDot1.GetComponent<Dot>().isMatched = true;
+					isMatched = true;
+				}
 			}
 		}
 
 		if (row > 0 && row < board.height - 1) {
 			GameObject upDot1 = board.allDots[column, row + 1];
 			GameObject downDot1 = board.allDots[column, row - 1];
-			if (upDot1.tag == this.gameObject.tag && downDot1.tag == this.gameObject.tag){
-				upDot1.GetComponent<Dot>().isMatched = true;
-				downDot1.GetComponent<Dot>().isMatched = true;
-				isMatched = true;
+			if (upDot1 != null && downDot1 != null) {
+				if (upDot1.tag == this.gameObject.tag && downDot1.tag == this.gameObject.tag){
+					upDot1.GetComponent<Dot>().isMatched = true;
+					downDot1.GetComponent<Dot>().isMatched = true;
+					isMatched = true;
+				}
 			}
 		}
 	}
