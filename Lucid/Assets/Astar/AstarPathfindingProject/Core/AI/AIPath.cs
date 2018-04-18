@@ -295,7 +295,8 @@ namespace Pathfinding {
 				velocity2D -= Vector2.ClampMagnitude(velocity2D, currentAcceleration * deltaTime);
 			}
 
-			velocity2D = MovementUtilities.ClampVelocity(velocity2D, maxSpeed, slowdown, slowWhenNotFacingTarget, forwards);
+            if(distanceToEnd < 10)
+			    velocity2D = MovementUtilities.ClampVelocity(velocity2D, maxSpeed, slowdown, slowWhenNotFacingTarget, forwards);
 
 			ApplyGravity(deltaTime);
 

@@ -12,53 +12,95 @@ public class DialogueNetworkBedroom : MonoBehaviour {
 
 	public float secondsBetweenCharacters = 0.7f;
     public GameObject chara;
+    private bool isMoving = false;
+    public Canvas canvas;
+    public Image window;
+    public Image sprite;
 	public KeyCode DialogueInput = KeyCode.Return;
-
-	private bool isStringBeingRevealed = false; 
+    private AnimationClip move1;
+    private AnimationClip move2;
+    public Animator spriteAnimator;
+    public bool SceneSwitch1 = false;
+    private bool isStringBeingRevealed = false; 
 	private bool isDialoguePlaying = false; 
 	private bool isEndOfDialogue = false;
     private Animator animator;
 	// Use this for initialization
 	void Start () {
-		textComponent = GetComponent<Text>();
+       // canvas.enabled = false;
+        window.enabled = false;
+        sprite.enabled = false;
+        textComponent = GetComponent<Text>();
 		textComponent.text = "";
         animator = chara.GetComponent<Animator>();
+        //gets animation clips for cutscene
+        foreach (AnimationClip clip in animator.runtimeAnimatorController.animationClips)
+        {
+            if (clip.name == "move1")
+            {
+                move1 = clip;
+            }
+            if (clip.name == "move2")
+            {
+                move2 = clip;
+            }
+        }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Return)) 
+
+
+    // Update is called once per frame
+    void Update () {
+		if (Input.GetKeyDown(KeyCode.Return)&& !isMoving) 
 		{
 			if(!isDialoguePlaying) 
 			{
 				isDialoguePlaying = true;
 				StartCoroutine(StartDialogue());
 			}
-		}
+                
+        }
 	}
 
 	private IEnumerator StartDialogue()
 	{
-		int dialogueLength = dialogueStrings.Length;
+        window.enabled = true;
+        sprite.enabled = true;
+        int dialogueLength = dialogueStrings.Length;
 		int currentDialogueIndex = 0;
 		while (currentDialogueIndex < dialogueLength || !isStringBeingRevealed) 
 		{
-			if (!isStringBeingRevealed) {
-				isStringBeingRevealed = true;
-				StartCoroutine(DisplayString(dialogueStrings[currentDialogueIndex++]));
 
-				if (currentDialogueIndex >= dialogueLength) {
-					isEndOfDialogue = true; 
-				}
+            if (!isStringBeingRevealed && !isMoving) {
+				isStringBeingRevealed = true;
                 if (currentDialogueIndex == 4)
                 {
+                    //wait for string to finish printing
+                    canvas.enabled = false;
                     animator.SetInteger("move", 1);
+                    isMoving = true;
+                    yield return new WaitForSeconds(move1.length);
+                    isMoving = false;
+                    canvas.enabled = true;
                 }
-
                 if (currentDialogueIndex == 8)
                 {
+                    //wait for string to finish printing
+                    canvas.enabled = false;
                     animator.SetInteger("move", 2);
+                    isMoving = true;
+                    yield return new WaitForSeconds(move1.length);
+                    isMoving = false;
+                    canvas.enabled = true;
                 }
+                
+                spriteAnimator.SetBool("talk",true);
+                StartCoroutine(DisplayString(dialogueStrings[currentDialogueIndex++]));
+
+				if (currentDialogueIndex >= dialogueLength) {
+					isEndOfDialogue = true;
+                    SceneSwitch1 = true;
+                }
+                
 
             }
 
@@ -81,7 +123,8 @@ public class DialogueNetworkBedroom : MonoBehaviour {
 	// Co-Routines
 	private IEnumerator DisplayString(string stringToDisplay) 
 	{
-		int stringLength = stringToDisplay.Length;
+        canvas.enabled = true;
+        int stringLength = stringToDisplay.Length;
 		int currentCharIndex = 0; 
 
 		// clear text component whenever co-routine is called
@@ -102,16 +145,22 @@ public class DialogueNetworkBedroom : MonoBehaviour {
 			}
 		} // end while loop
 
-		while (true) 
+        spriteAnimator.SetBool("talk", false);
+        
+        while (true) 
 		{
 			if (Input.GetKeyDown (DialogueInput)) {
-				break;
+                if (SceneSwitch1)
+                {
+                    canvas.enabled = false;
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("scene");
+                }
+                break;
 			}
-
 			yield return 0;
 		}
-
-		isStringBeingRevealed = false;
+        
+        isStringBeingRevealed = false;
 		textComponent.text = ""; 
 	}
 }
