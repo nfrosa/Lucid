@@ -5,6 +5,21 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Purple Dot
+  - Pink Dot
+  - Green Dot
+  - Blue Dot
+  - BabyBlue Dot
+  - Emoji
+  - Emoji_0
+  - Emoji_1
+  - Emoji_2
+  - Emoji_3
+  - Emoji_4
+  - Emoji_5
+  - Emoji_6
+  - Emoji_7
+  - Emoji_8
   layers:
   - Default
   - TransparentFX

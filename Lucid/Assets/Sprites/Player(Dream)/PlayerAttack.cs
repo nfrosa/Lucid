@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour {
 	private float attackCd = 0.3f;
 
 	public Collider2D attackTrigger;
+	public AudioSource punch;
+	public AudioClip punch1;
 
 	private Animator anim;
 
@@ -22,8 +24,9 @@ public class PlayerAttack : MonoBehaviour {
 		if (Input.GetKeyDown ("f") && !attacking) {
 			attacking = true;
 			attackTimer = attackCd;
-
+		
 			attackTrigger.enabled = true;
+			punch.PlayOneShot (punch1);
 		}
 
 		if (attacking) {

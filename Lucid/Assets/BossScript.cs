@@ -6,6 +6,6 @@ public class BossScript : MonoBehaviour {
 
     private void OnDestroy()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Puzzle");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Puzzle");
     }
 }
