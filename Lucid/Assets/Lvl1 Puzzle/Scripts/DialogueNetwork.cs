@@ -27,7 +27,7 @@ public class DialogueNetwork : MonoBehaviour {
 	// boolean variables to handle dialogue flow
 	private bool isStringBeingRevealed = false; 
 	private bool isDialoguePlaying = false; 
-	private bool isEndOfDialogue = false; 
+	private bool isEndOfDialogue = false;
 	private bool isPlayingPuzzle = false;
 	private bool repeatPositive = true;
 
@@ -45,6 +45,7 @@ public class DialogueNetwork : MonoBehaviour {
 	void Start () {
 		textComponent = GetComponent<Text>();
 		textComponent.text = "";
+
 //		HideFu();
 //		HideTherapist();
 	}
@@ -68,14 +69,14 @@ public class DialogueNetwork : MonoBehaviour {
 //				System.Random random = new System.Random();
 //				int randomIndex = random.Next(0, 5);
 
-				currentScore = CreateGame.Score;
 				timeLeft = 15.0f;
 				if (counterToWinGame == 5 && repeatPositive) {
 					counterToWinGame = 0;
 					repeatPositive = false;
-
 				}
-				StartCoroutine(DisplayString(therapistPositive[counterToWinGame++]));
+				counterToWinGame += (CreateGame.Score - currentScore);
+				StartCoroutine(DisplayString(therapistPositive[counterToWinGame]));
+				currentScore = CreateGame.Score;
 			}
 		}
 
@@ -105,14 +106,14 @@ public class DialogueNetwork : MonoBehaviour {
 			if (!isStringBeingRevealed) {
 				isStringBeingRevealed = true;
 
-				if (currentDialogueIndex == 1 || currentDialogueIndex == 5) {
-//					ShowTherapist();
+				if (currentDialogueIndex == 1 || currentDialogueIndex == 5 || currentDialogueIndex == 22) {
+					ShowTherapist();
 //					HideFu();
 				}
 
-				if (currentDialogueIndex == 3) {
+				if (currentDialogueIndex == 3 || currentDialogueIndex == 11 || currentDialogueIndex == 25) {
 //					HideTherapist();
-//					ShowFu();
+					ShowFu();
 				}
 
 				if (currentDialogueIndex == 8) {
@@ -123,6 +124,7 @@ public class DialogueNetwork : MonoBehaviour {
 				if (CreateGame.Score >= 10) {
 					// User has defeated the Puzzle, Advance Dialogue
 					isPlayingPuzzle = false;
+//					StartCoroutine (DisplayString(dialogueStrings[currentDialogueIndex++]));
 				}
 
 				// Print Normal Dialogue
@@ -197,7 +199,9 @@ public class DialogueNetwork : MonoBehaviour {
 
 	private void ShowFu()
 	{
-		Fu.SetActive(true);
+		//Fu.SetActive(true);
+//		characterName.text = "Somi: ";
+		CharacterName.name = "Somi: ";
 	}
 
 	// Show/Hide Character Therapist
@@ -208,6 +212,8 @@ public class DialogueNetwork : MonoBehaviour {
 
 	private void ShowTherapist()
 	{
-		Therapist.SetActive(true);
+		//Therapist.SetActive(true);
+//		characterName.text = "Therapist: ";
+		CharacterName.name = "Therapist: ";
 	}
 }
