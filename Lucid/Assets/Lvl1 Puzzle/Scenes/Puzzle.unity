@@ -847,18 +847,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueStrings:
   - '--- After the events of the night before, Fu decides to see her therapist ---'
-  - "Therapist: Fu, I want you to feel better and do better\u2026 Now, tell me...
-    what's wrong?"
-  - 'Fu: I don''t know, I began experiencing these weird dreams...'
-  - "Fu: It was very vivid\u2026 almost as if it was real life. Everything felt so\u2026
-    real."
-  - 'Therapist: I see... I need more information to detect what the issue is! I have
-    an idea.'
-  - "Therapist: Let's see you play this game\u2026 I want you to talk about your dream
-    as you play this game. How did you feel? Did it trigger anything from your past?
-    Tell me everything."
-  introDialogue: []
-  outroDialogue: []
+  - 'Therapist: Fu, I''ve known you for a while and I''ve never seen you this shaken
+    up... '
+  - 'Therapist: Tell me... What''s wrong? '
+  - 'Fu: I had these really weird dreams last night... they were so vivid... almost
+    life-like!'
+  - 'Fu: Those dreams are... I don''t really know how to explain it... '
+  - 'Therapist: Interesting... '
+  - 'Therapist: I need more information... I have an idea to help you get your thoughts
+    together. Let''s have you play this game...'
+  - 'Therapist: I''ll be watching closely and evaluating using my cybernetic eye so
+    give it your all! Don''t hold anything back!'
   therapistNegative:
   - 'Therapist: This is awful! Are you going to even make a move?'
   - "Therapist: We\u2019re not going to get anywhere in this session if you don\u2019t

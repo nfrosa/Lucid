@@ -27,7 +27,7 @@ public class CreateGame : MonoBehaviour
 	bool renewBoard = false;							// Set renew board check to false
 	Tile[,] tiles = new Tile[cols, rows];				// Two dimensional array to keep track of tiles
 
-	int Score;											// Score for matches
+	public static int Score;							// Score for matches
 	public Text ScoreText;								// String value for text
 	bool firstScore = false;
 
@@ -305,5 +305,4 @@ public class CreateGame : MonoBehaviour
 	{
 		ScoreText.text = "Score: " + Score.ToString();
 	}
-
 }
