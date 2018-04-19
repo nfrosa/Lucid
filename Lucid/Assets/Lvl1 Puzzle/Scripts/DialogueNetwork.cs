@@ -29,7 +29,10 @@ public class DialogueNetwork : MonoBehaviour {
 	private bool isDialoguePlaying = false; 
 	private bool isEndOfDialogue = false; 
 	private bool isPlayingPuzzle = false;
+	private bool repeatPositive = true;
+
 	private int counterToEndGame = 0;
+	private int counterToWinGame = 0;
 
 	// keep track of time
 	private float timeLeft = 15.0f; 
@@ -62,12 +65,17 @@ public class DialogueNetwork : MonoBehaviour {
 			}
 
 			if(CreateGame.Score > currentScore) {
-				System.Random random = new System.Random();
-				int randomIndex = random.Next(0, 5);
+//				System.Random random = new System.Random();
+//				int randomIndex = random.Next(0, 5);
 
 				currentScore = CreateGame.Score;
 				timeLeft = 15.0f;
-				StartCoroutine(DisplayString(therapistPositive[randomIndex]));
+				if (counterToWinGame == 5 && repeatPositive) {
+					counterToWinGame = 0;
+					repeatPositive = false;
+
+				}
+				StartCoroutine(DisplayString(therapistPositive[counterToWinGame++]));
 			}
 		}
 
@@ -110,6 +118,11 @@ public class DialogueNetwork : MonoBehaviour {
 				if (currentDialogueIndex == 8) {
 					// Intro Dialogue is Done; Puzzle begins
 					isPlayingPuzzle = true;
+				}
+
+				if (CreateGame.Score >= 10) {
+					// User has defeated the Puzzle, Advance Dialogue
+					isPlayingPuzzle = false;
 				}
 
 				// Print Normal Dialogue
