@@ -20,7 +20,7 @@ public class DialogueNetwork : MonoBehaviour {
 	public GameObject Fu;
 	public GameObject Therapist;
 
-	public float secondsBetweenCharacters = 0.03f;
+	private float secondsBetweenCharacters = 0.03f;
 
 	public KeyCode DialogueInput = KeyCode.Return;
 

@@ -815,8 +815,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_Font: {fileID: 12800000, guid: 6cade70cc15a93d46a143e9c4390f7ee, type: 3}
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -846,8 +846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueStrings:
-  - '--- After the events of the night before, Fu decides to see her therapist ---'
-  - 'Fu, I''ve known you for a while and I''ve never seen you this shaken up... '
+  - '--- After the events of the night before, Somi decides to see her therapist ---'
+  - 'Somi, I''ve known you for a while and I''ve never seen you this shaken up... '
   - 'Tell me... What''s wrong? '
   - I had these really weird dreams last night... they were so vivid... almost life-like!
   - 'Those dreams are... I don''t really know how to explain it... '
@@ -2551,11 +2551,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_Font: {fileID: 12800000, guid: 6cade70cc15a93d46a143e9c4390f7ee, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
