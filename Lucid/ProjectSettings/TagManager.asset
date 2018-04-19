@@ -20,6 +20,7 @@ TagManager:
   - Emoji_6
   - Emoji_7
   - Emoji_8
+  - Boss
   layers:
   - Default
   - TransparentFX

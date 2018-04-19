@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HurtPlayer : MonoBehaviour {
 
@@ -52,7 +53,11 @@ public class HurtPlayer : MonoBehaviour {
 
 	IEnumerator Coroutine() {
 		yield return new WaitForSeconds(0.4f); //this will wait 5 seconds
-		Destroy (gameObject);
+		if (gameObject.name == "Boss") {
+			SceneManager.LoadScene("Puzzle");
+		} else {
+			Destroy (gameObject);
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
