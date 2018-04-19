@@ -858,7 +858,7 @@ MonoBehaviour:
     together. Let''s have you play this game...'
   - 'Therapist: I''ll be watching closely and evaluating using my cybernetic eye so
     give it your all! Don''t hold anything back!'
-  - 'Therapist: Let''s get started!'
+  - 'Therapist: Okay! Let''s stop here...'
   - 'Therapist: I''ve analyzed your moves... It seems like this puzzle has helped
     clear up your head...'
   - 'Therapist: Well then, would you like to talk to me now? '
@@ -878,12 +878,15 @@ MonoBehaviour:
     insult me on social media...'
   - 'Fu: Everyone in this city worships them... Meanwhile, here I am, lost as ever. '
   - 'Therapist: But you have to find yourself.'
-  - 'Therapist: The puzzle and your moves - analyzed by my Cybernetic Eye - tells
-    me that you want to put an end to the importance of social media.'
-  - 'Therapist: You have the courage to achieve this... You just need tto find it.
+  - 'Therapist: The puzzle and your moves tells me that you want to put an end to
+    the superficiality of social media.'
+  - 'Therapist: You have the courage to achieve this... You just need to find it.
     So what will it be, Fu?'
   - 'Fu: ...'
   - 'Fu: I''m going to make a change.'
+  - 'Fu: I need to better myself as an individual and rid myself of these feelings
+    of Jealousy.'
+  - 'Fu: I need to show everyone that I''m not worthless!'
   therapistNegative:
   - 'Therapist: This is awful! Are you going to even make a move?'
   - "Therapist: We\u2019re not going to get anywhere in this session if you don\u2019t
