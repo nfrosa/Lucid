@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour {
 
-	public void Damage(int damage){
-		// FIX LATER
+	void Start () {
+	}
+
+	void Update () {
 	}
 }
