@@ -859,7 +859,31 @@ MonoBehaviour:
   - 'Therapist: I''ll be watching closely and evaluating using my cybernetic eye so
     give it your all! Don''t hold anything back!'
   - 'Therapist: Let''s get started!'
-  - Can I get a hoiya
+  - 'Therapist: I''ve analyzed your moves... It seems like this puzzle has helped
+    clear up your head...'
+  - 'Therapist: Well then, would you like to talk to me now? '
+  - 'Fu: I - I suppose...'
+  - 'Fu: It all began years back...'
+  - 'Fu: I had a small friend group of four girls that I considered my best friends...'
+  - 'Fu: We did everything together... we loved each other dearly...'
+  - 'Fu: But... as the world evolved to the Cyber Age it is today, and as Social Media
+    became more important... '
+  - 'Fu: My friends changed!'
+  - 'Fu: They got so caught up on who has the most followers on Social Media and who
+    is more famous than the other...'
+  - 'Fu: Despite these arguments, they were all okay with being friends with each
+    other because they were equally famous...'
+  - 'Fu: Except me. '
+  - 'Fu: They began ostracizing me from group events... and even went as far as to
+    insult me on social media...'
+  - 'Fu: Everyone in this city worships them... Meanwhile, here I am, lost as ever. '
+  - 'Therapist: But you have to find yourself.'
+  - 'Therapist: The puzzle and your moves - analyzed by my Cybernetic Eye - tells
+    me that you want to put an end to the importance of social media.'
+  - 'Therapist: You have the courage to achieve this... You just need tto find it.
+    So what will it be, Fu?'
+  - 'Fu: ...'
+  - 'Fu: I''m going to make a change.'
   therapistNegative:
   - 'Therapist: This is awful! Are you going to even make a move?'
   - "Therapist: We\u2019re not going to get anywhere in this session if you don\u2019t
