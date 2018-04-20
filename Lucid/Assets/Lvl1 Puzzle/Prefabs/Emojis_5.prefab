@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212511712941470118}
   - component: {fileID: 61300332149847770}
   - component: {fileID: 58420139579012624}
-  - component: {fileID: 114405447836526186}
   m_Layer: 0
   m_Name: Emojis_5
   m_TagString: Emoji_5
@@ -83,26 +82,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9, y: 1.9}
   m_EdgeRadius: 0
---- !u!114 &114405447836526186
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1535796949547620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde764aacae847e4ead38905c7efe6cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  column: 0
-  row: 0
-  previousColumn: 0
-  previousRow: 0
-  targetX: 0
-  targetY: 0
-  isMatched: 0
-  swipeAngle: 0
-  swipeResist: 1
 --- !u!212 &212511712941470118
 SpriteRenderer:
   m_ObjectHideFlags: 1
