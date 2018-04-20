@@ -30,6 +30,7 @@ public class DialogueNetwork : MonoBehaviour {
 	private bool isEndOfDialogue = false;
 	private bool isPlayingPuzzle = false;
 	private bool repeatPositive = true;
+	private bool isShowing = false; 
 
 	private int counterToEndGame = 0;
 	private int counterToWinGame = 0;
@@ -46,6 +47,8 @@ public class DialogueNetwork : MonoBehaviour {
 		textComponent = GetComponent<Text>();
 		textComponent.text = "";
 		CharacterName.name = "";
+		StartCoroutine(StartDialogue());
+		isShowing = true;
 
 //		HideFu();
 //		HideTherapist();
@@ -101,6 +104,10 @@ public class DialogueNetwork : MonoBehaviour {
 	{
 		int dialogueLength = dialogueStrings.Length;
 		int currentDialogueIndex = 0;
+
+		if (isShowing) {
+			currentDialogueIndex++;
+		}
 
 		while (currentDialogueIndex < dialogueLength || !isStringBeingRevealed) 
 		{
