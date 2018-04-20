@@ -31,6 +31,7 @@ public class DialogueNetwork : MonoBehaviour {
 	private bool isPlayingPuzzle = false;
 	private bool repeatPositive = true;
 	private bool isShowing = false;
+    private bool gameDone = false;
     private bool isEnd = false;
     public Image enter;
 
@@ -156,9 +157,9 @@ public class DialogueNetwork : MonoBehaviour {
 
 		while (true) 
 		{
-            if (CreateGame.Score >= 10)
+            if (CreateGame.Score >= 10 && !gameDone)
             {
-                CreateGame.Score = 0;
+                gameDone = true;
                 break;
             }
             if (Input.GetKeyDown(DialogueInput)) {
@@ -199,9 +200,9 @@ public class DialogueNetwork : MonoBehaviour {
 
 		while (true) {
 
-            if (CreateGame.Score >= 10)
+            if (CreateGame.Score >= 10 && !gameDone)
             {
-                CreateGame.Score = 0;
+                gameDone = true;
                 break;
             }
             if (Input.GetKeyDown (DialogueInput)) {
