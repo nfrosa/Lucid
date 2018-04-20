@@ -54,7 +54,7 @@ public class HurtPlayer : MonoBehaviour {
 	IEnumerator Coroutine() {
 		yield return new WaitForSeconds(0.4f); //this will wait 5 seconds
 		if (gameObject.name == "Boss") {
-			SceneManager.LoadScene("Puzzle");
+			SceneManager.LoadScene("Therapist's Office");
 		} else {
 			Destroy (gameObject);
 		}
