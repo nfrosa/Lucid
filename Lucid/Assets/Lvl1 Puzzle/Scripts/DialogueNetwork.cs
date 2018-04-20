@@ -45,6 +45,7 @@ public class DialogueNetwork : MonoBehaviour {
 	void Start () {
 		textComponent = GetComponent<Text>();
 		textComponent.text = "";
+		CharacterName.name = "";
 
 //		HideFu();
 //		HideTherapist();
@@ -212,8 +213,6 @@ public class DialogueNetwork : MonoBehaviour {
 
 	private void ShowTherapist()
 	{
-		//Therapist.SetActive(true);
-//		characterName.text = "Therapist: ";
 		CharacterName.name = "Dr. Helen: ";
 	}
 }

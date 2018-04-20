@@ -10,7 +10,7 @@ public class DialogueNetworkThera : MonoBehaviour {
 	public string[] dialogueStrings;
 	public string[] therapistNegativeStrings;
 
-	public float secondsBetweenCharacters = 0.7f;
+	public float secondsBetweenCharacters = 0.01f;
     public GameObject somi;
     public GameObject thera;
     private bool isMoving = false;
@@ -86,18 +86,26 @@ public class DialogueNetworkThera : MonoBehaviour {
 
             if (!isStringBeingRevealed && !isMoving) {
 				isStringBeingRevealed = true;
-                if (currentDialogueIndex == 0)
-                    Speaker(therasprite);
+				if (currentDialogueIndex == 0) 
+				{
+					Speaker (therasprite);
+					ShowTherapist();
+				}
+
                 if (currentDialogueIndex == 1)
                 {
+					ShowSomi();
                     Speaker(somisprite);
                     somianimator.SetInteger("mood", 1); //happy
                 }
+
                 if (currentDialogueIndex == 2)
                 {
                     Speaker(therasprite);
                     theraanimator.SetInteger("mood", 1);
+					ShowTherapist();
                 }
+
                 if (currentDialogueIndex == 3)
                 {
                     canvas.enabled = false;
@@ -115,16 +123,17 @@ public class DialogueNetworkThera : MonoBehaviour {
                 {
                     Speaker(somisprite);
                     somianimator.SetInteger("mood", 2); //sad
+					ShowSomi();
                 }
                 if (currentDialogueIndex == 5)
                     Speaker(somisprite);
                 if (currentDialogueIndex == 6)
                     Speaker(somisprite);
-                if (currentDialogueIndex == 7)
-                    Speaker(therasprite);
-
-
-
+				if (currentDialogueIndex == 7) {
+					Speaker (therasprite);
+					ShowTherapist();
+				}
+					
                 somianimator.SetBool("talk",true);
                 theraanimator.SetBool("talk", true);
                 StartCoroutine(DisplayString(dialogueStrings[currentDialogueIndex++]));
@@ -213,4 +222,19 @@ public class DialogueNetworkThera : MonoBehaviour {
             somisprite.enabled = false;
         }
     }
+
+	private void ShowSomi()
+	{
+		CharacterName.name = "Somi: ";
+	}
+
+	private void HideSomi()
+	{
+		CharacterName.name = "";
+	}
+
+	private void ShowTherapist()
+	{
+		CharacterName.name = "Dr. Helen: ";
+	}
 }

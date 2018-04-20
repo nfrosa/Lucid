@@ -10,7 +10,7 @@ public class DialogueNetworkBedroom : MonoBehaviour {
 	public string[] dialogueStrings;
 	public string[] therapistNegativeStrings;
 
-	public float secondsBetweenCharacters = 0.7f;
+	private float secondsBetweenCharacters = 0.01f;
     public GameObject chara;
     private bool isMoving = false;
     public Canvas canvas;
