@@ -16,7 +16,9 @@ public class DialogueNetworkBedroom : MonoBehaviour {
     public Canvas canvas;
     public Image window;
     public Image sprite;
-	public KeyCode DialogueInput = KeyCode.Return;
+    public Image enter;
+    public Image loading;
+    public KeyCode DialogueInput = KeyCode.Return;
     private AnimationClip move1;
     private AnimationClip move2;
     public Animator spriteAnimator;
@@ -30,6 +32,7 @@ public class DialogueNetworkBedroom : MonoBehaviour {
        // canvas.enabled = false;
         window.enabled = false;
         sprite.enabled = false;
+        loading.enabled = false;
         textComponent = GetComponent<Text>();
 		textComponent.text = "";
         animator = chara.GetComponent<Animator>();
@@ -152,7 +155,10 @@ public class DialogueNetworkBedroom : MonoBehaviour {
 			if (Input.GetKeyDown (DialogueInput)) {
                 if (SceneSwitch1)
                 {
-                    canvas.enabled = false;
+                    window.enabled = false;
+                    sprite.enabled = false;
+                    enter.enabled = false;
+                    loading.enabled = true;
                     UnityEngine.SceneManagement.SceneManager.LoadScene("scene");
                 }
                 break;
