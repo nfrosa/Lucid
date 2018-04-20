@@ -8212,13 +8212,13 @@ MonoBehaviour:
     their best lives. '
   - I wish I could change.
   therapistNegativeStrings: []
-  secondsBetweenCharacters: 0.0001
   chara: {fileID: 834335517}
   canvas: {fileID: 1221694429}
   window: {fileID: 1271623026}
   sprite: {fileID: 1649908789}
   enter: {fileID: 1616679730}
   loading: {fileID: 1870303582}
+  name: {fileID: 266900161}
   DialogueInput: 13
   spriteAnimator: {fileID: 1649908791}
   SceneSwitch1: 0

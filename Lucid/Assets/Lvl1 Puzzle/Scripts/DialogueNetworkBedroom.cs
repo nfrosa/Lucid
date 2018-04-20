@@ -18,6 +18,7 @@ public class DialogueNetworkBedroom : MonoBehaviour {
     public Image sprite;
     public Image enter;
     public Image loading;
+    public Text name;
     public KeyCode DialogueInput = KeyCode.Return;
     private AnimationClip move1;
     private AnimationClip move2;
@@ -163,6 +164,7 @@ public class DialogueNetworkBedroom : MonoBehaviour {
                     window.enabled = false;
                     sprite.enabled = false;
                     enter.enabled = false;
+                    name.enabled = false;
                     loading.enabled = true;
                     UnityEngine.SceneManagement.SceneManager.LoadScene("scene");
                 }
