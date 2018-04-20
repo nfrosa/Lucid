@@ -23,6 +23,8 @@ public class DialogueNetworkThera : MonoBehaviour {
 	private bool isEndOfDialogue = false;
     public Canvas canvas;
     public Image window;
+    public Image enter;
+    public Image loading;
     public Image somisprite;
     public Image therasprite;
     private Animator somimove;
@@ -33,6 +35,7 @@ public class DialogueNetworkThera : MonoBehaviour {
     void Start () {
        // canvas.enabled = false;
         window.enabled = false;
+        loading.enabled = false; 
         somisprite.enabled = false;
         therasprite.enabled = false;
         textComponent = GetComponent<Text>();
@@ -128,7 +131,7 @@ public class DialogueNetworkThera : MonoBehaviour {
 
 				if (currentDialogueIndex >= dialogueLength) {
 					isEndOfDialogue = true;
-                    //SceneSwitch1 = true;
+                    SceneSwitch1 = true;
                 }
                 
 
@@ -184,7 +187,9 @@ public class DialogueNetworkThera : MonoBehaviour {
                 if (SceneSwitch1)
                 {
                     canvas.enabled = false;
-                    UnityEngine.SceneManagement.SceneManager.LoadScene("scene");
+                    enter.enabled = false;
+                    loading.enabled = true;
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Puzzle");
                 }
                 break;
 			}
