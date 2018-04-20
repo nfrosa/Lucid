@@ -98,6 +98,7 @@ public class DialogueNetworkBedroom : MonoBehaviour {
                     yield return new WaitForSeconds(move1.length);
                     isMoving = false;
                     canvas.enabled = true;
+					ShowSomi();
                 }
                 
                 spriteAnimator.SetBool("talk",true);
