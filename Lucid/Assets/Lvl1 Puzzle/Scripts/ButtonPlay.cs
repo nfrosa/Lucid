@@ -14,6 +14,6 @@ public class ButtonPlay : MonoBehaviour {
 	}
 
 	void switchScene () {
-		SceneManager.LoadScene("scene");
+		SceneManager.LoadScene("bedroom");
 	}
 }

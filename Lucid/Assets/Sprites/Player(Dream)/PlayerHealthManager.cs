@@ -12,11 +12,13 @@ public class PlayerHealthManager : MonoBehaviour {
 	private float flashCounter;
 
 	private SpriteRenderer playerSprite;
+	private Rigidbody2D rigidbody2D;
 
 	// Use this for initialization
 	void Start () {
 		playerCurrentHealth = playerMaxHealth;
 		playerSprite = GetComponent<SpriteRenderer> ();
+		rigidbody2D = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
@@ -40,7 +42,7 @@ public class PlayerHealthManager : MonoBehaviour {
 			}
 
 			flashCounter -= Time.deltaTime;
-		}
+		} 
 	}
 
 	public void HurtPlayer(int damageToGive) {

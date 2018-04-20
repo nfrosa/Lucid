@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BossScript : MonoBehaviour {
 
-    private void OnDestroy()
-    {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("Puzzle");
-    }
+	void Start () {
+	}
+
+	void Update () {
+	}
 }

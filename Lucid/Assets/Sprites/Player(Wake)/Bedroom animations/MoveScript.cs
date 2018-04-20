@@ -20,8 +20,9 @@ public class MoveScript : MonoBehaviour {
         Vector2 vel = rb.position - oldpos;
         oldpos = rb.position;
         rbvel = vel;
-        animator.SetBool("Idle", false);
-        if (vel.x == 0 && vel.y <0)
+        //if(!(vel.x == 0 && vel.y == 0)) {
+            animator.SetBool("Idle", false);
+            if (vel.x == 0 && vel.y <0)
         {
             animator.SetInteger("Direction", 0); // going down
         }
@@ -41,6 +42,6 @@ public class MoveScript : MonoBehaviour {
         {
             animator.SetBool("Idle", true);
         }
-
+       // }
     }
 }
