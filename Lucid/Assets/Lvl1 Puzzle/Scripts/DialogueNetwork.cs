@@ -94,6 +94,7 @@ public class DialogueNetwork : MonoBehaviour {
 				isDialoguePlaying = true;
 				StartCoroutine(StartDialogue());
 			}
+
 		}
 	}
 
@@ -136,7 +137,6 @@ public class DialogueNetwork : MonoBehaviour {
 					// User has defeated the Puzzle, Advance Dialogue
 					isPlayingPuzzle = false;
                     enter.enabled = true;
-//					StartCoroutine (DisplayString(dialogueStrings[currentDialogueIndex++]));
 				}
 
 				// Print Normal Dialogue
@@ -157,8 +157,11 @@ public class DialogueNetwork : MonoBehaviour {
 		while (true) 
 		{
             if (CreateGame.Score >= 10)
+            {
+                CreateGame.Score = 0;
                 break;
-			if (Input.GetKeyDown(DialogueInput)) {
+            }
+            if (Input.GetKeyDown(DialogueInput)) {
 				break;
 			}
 
@@ -194,8 +197,13 @@ public class DialogueNetwork : MonoBehaviour {
 			}
 		} // end while loop
 
-		while (true) { 
+		while (true) {
 
+            if (CreateGame.Score >= 10)
+            {
+                CreateGame.Score = 0;
+                break;
+            }
             if (Input.GetKeyDown (DialogueInput)) {
                 if (isEnd)
                 {
