@@ -30,7 +30,9 @@ public class DialogueNetwork : MonoBehaviour {
 	private bool isEndOfDialogue = false;
 	private bool isPlayingPuzzle = false;
 	private bool repeatPositive = true;
-	private bool isShowing = false; 
+	private bool isShowing = false;
+    private bool isEnd = false;
+    public Image enter;
 
 	private int counterToEndGame = 0;
 	private int counterToWinGame = 0;
@@ -57,6 +59,7 @@ public class DialogueNetwork : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(isPlayingPuzzle) {
+            enter.enabled = false;
 			timeLeft -= Time.deltaTime;
 			// Print Negative Dialogue if Score isn't changed in 15 seconds
 			if(timeLeft <= 0) {
@@ -132,6 +135,7 @@ public class DialogueNetwork : MonoBehaviour {
 				if (CreateGame.Score >= 10) {
 					// User has defeated the Puzzle, Advance Dialogue
 					isPlayingPuzzle = false;
+                    enter.enabled = true;
 //					StartCoroutine (DisplayString(dialogueStrings[currentDialogueIndex++]));
 				}
 
@@ -141,7 +145,9 @@ public class DialogueNetwork : MonoBehaviour {
 				}
 
 				if (currentDialogueIndex >= dialogueLength) {
-					isEndOfDialogue = true; 
+
+                    isEnd = true;
+                    isEndOfDialogue = true; 
 				}
 			}
 
@@ -150,6 +156,8 @@ public class DialogueNetwork : MonoBehaviour {
 
 		while (true) 
 		{
+            if (CreateGame.Score >= 10)
+                break;
 			if (Input.GetKeyDown(DialogueInput)) {
 				break;
 			}
@@ -186,10 +194,14 @@ public class DialogueNetwork : MonoBehaviour {
 			}
 		} // end while loop
 
-		while (true) 
-		{
-			if (Input.GetKeyDown (DialogueInput)) {
-				break;
+		while (true) { 
+
+            if (Input.GetKeyDown (DialogueInput)) {
+                if (isEnd)
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+                }
+                break;
 			}
 
 			yield return 0;
