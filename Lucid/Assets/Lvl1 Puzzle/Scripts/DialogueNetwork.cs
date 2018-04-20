@@ -214,6 +214,6 @@ public class DialogueNetwork : MonoBehaviour {
 	{
 		//Therapist.SetActive(true);
 //		characterName.text = "Therapist: ";
-		CharacterName.name = "Therapist: ";
+		CharacterName.name = "Dr. Helen: ";
 	}
 }

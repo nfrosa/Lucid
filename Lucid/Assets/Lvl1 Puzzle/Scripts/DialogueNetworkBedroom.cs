@@ -48,6 +48,8 @@ public class DialogueNetworkBedroom : MonoBehaviour {
                 move2 = clip;
             }
         }
+
+		HideSomi();
     }
 
 
@@ -72,11 +74,12 @@ public class DialogueNetworkBedroom : MonoBehaviour {
 		int currentDialogueIndex = 0;
 		while (currentDialogueIndex < dialogueLength || !isStringBeingRevealed) 
 		{
-
+			ShowSomi();
             if (!isStringBeingRevealed && !isMoving) {
 				isStringBeingRevealed = true;
                 if (currentDialogueIndex == 4)
                 {
+					HideSomi();
                     //wait for string to finish printing
                     canvas.enabled = false;
                     animator.SetInteger("move", 1);
@@ -87,6 +90,7 @@ public class DialogueNetworkBedroom : MonoBehaviour {
                 }
                 if (currentDialogueIndex == 8)
                 {
+					HideSomi();
                     //wait for string to finish printing
                     canvas.enabled = false;
                     animator.SetInteger("move", 2);
@@ -168,5 +172,15 @@ public class DialogueNetworkBedroom : MonoBehaviour {
         
         isStringBeingRevealed = false;
 		textComponent.text = ""; 
+	}
+
+	private void ShowSomi()
+	{
+		CharacterName.name = "Somi: ";
+	}
+
+	private void HideSomi()
+	{
+		CharacterName.name = "";
 	}
 }
