@@ -34,7 +34,6 @@ public class DialogueNetworkThera : MonoBehaviour {
     // Use this for initialization
     void Start () {
        // canvas.enabled = false;
-		CharacterName.name = "";
         window.enabled = false;
         loading.enabled = false; 
         somisprite.enabled = false;
